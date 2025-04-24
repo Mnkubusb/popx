@@ -19,7 +19,7 @@ const UserPage = () => {
         }
         const user =  JSON.parse(userResponse as string)
         setUser(user)
-    },[])
+    },[router])
 
   return (
     <div className='h-full border border-gray-300 relative' >

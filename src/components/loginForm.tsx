@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import { Form, FormField, FormItem, FormLabel } from "./ui/form"
 import { Input } from "./ui/input"
@@ -14,12 +15,12 @@ import { toast } from "sonner";
 
 
 
-const CustomInput = ({ field, isRegister }: { field: any, isRegister: boolean }) => {
+const CustomInput = ({ field, isRegister }: { field :any, isRegister: boolean }) => {
     const id = useId();
 
     return (
         <div className="group relative">
-            <Label htmlFor={id} className="origin-start absolute top-1/2 block -translate-y-1/2 cursor-text px-1 text-sm text-muted-foreground/70 transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium group-focus-within:text-primary has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium has-[+input:not(:placeholder-shown)]:text-primary" >
+            <Label htmlFor={id} className="origin-start absolute top-1/2 block -translate-y-1/2 cursor-text px-1 text-sm text-muted-foreground/70 transition-all group-focus-within:pointer-events-none group-focus</div>-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium group-focus-within:text-primary has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium has-[+input:not(:placeholder-shown)]:text-primary" >
                 <span className="inline-flex bg-background px-2">
                     {field.name.replaceAll("_", " ")}
                     {isRegister && !(field.name === 'Company_Name') &&
