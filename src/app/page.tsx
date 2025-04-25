@@ -11,10 +11,10 @@ export default function Home() {
         <h1 className="text-3xl font-bold">Welcome to PopX</h1>
         <p className="w-64 text-muted-foreground text-lg m-1 font-normal">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
       </div>
-      <Button className="mx-5 h-10 mb-3"  onClick={()=>{router.push("/register")}}>
+      <Button className="mx-5 h-10 mb-3 cursor-pointer"  onClick={()=>{router.push("/register")}}>
           Create Account
       </Button>
-      <Button className="mx-5 h-10 mb-14 font-semibold" variant={"secondary"}  onClick={()=>{router.push("/login")}}>
+      <Button className="mx-5 h-10 mb-14 font-semibold cursor-pointer" variant={"secondary"}  onClick={()=>{router.push("/login")}}>
           Already Registered? Login
       </Button>
     </main>
