@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Toaster />
-        <div className="max-w-sm w-screen h-screen mx-auto bg-[#F7F8F9]">
+        <div className="sm:max-w-sm w-screen h-dvh mx-auto bg-[#F7F8F9]">
           {children}
         </div>
       </body>

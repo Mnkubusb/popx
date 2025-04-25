@@ -15,20 +15,20 @@ import { toast } from "sonner";
 
 
 
-const CustomInput = ({ field, isRegister }: { field :any, isRegister: boolean }) => {
+const CustomInput = ({ field, isRegister }: { field: any, isRegister: boolean }) => {
     const id = useId();
 
     return (
         <div className="group relative">
             <Label htmlFor={id} className="origin-start absolute top-1/2 block -translate-y-1/2 cursor-text px-1 text-sm text-muted-foreground/70 transition-all group-focus-within:pointer-events-none group-focus</div>-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium group-focus-within:text-primary has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium has-[+input:not(:placeholder-shown)]:text-primary" >
-                <span className="inline-flex bg-background px-2">
+                <span className="inline-flex bg-[#F7F8F9] px-3">
                     {field.name.replaceAll("_", " ")}
                     {isRegister && !(field.name === 'Company_Name') &&
                         <span className="text-red-600">*</span>
                     }
                 </span>
             </Label>
-            <Input className="h-10 rounded-md" placeholder="" {...field} type={field.name} id={id} required />
+            <Input className="h-10 rounded-md bg-[#F7F8F9]" placeholder="" {...field} type={field.name} id={id} required />
         </div>
     )
 }
@@ -68,16 +68,16 @@ const LoginForm = ({ title, desc, button, formData, isRegister }: {
         console.log(values)
         const response = localStorage.getItem("user");
         const existingUser = JSON.parse(response as string)
-        if(isRegister){
-            if(existingUser){
+        if (isRegister) {
+            if (existingUser) {
                 toast.error("User already Exists")
                 router.push("/login")
             }
             localStorage.setItem("user", JSON.stringify(values))
             router.push("/login")
             toast.success("Account Created Successfully")
-        }else{
-            if(existingUser.Email_Address === values.Email_Address && existingUser.Password === values.Password){
+        } else {
+            if (existingUser.Email_Address === values.Email_Address && existingUser.Password === values.Password) {
                 toast.success("Login Successful")
                 router.push("/user")
             }
@@ -128,8 +128,8 @@ const LoginForm = ({ title, desc, button, formData, isRegister }: {
                             )} />
                         )}
                     </div>
-                    <div className={ isRegister ? "mt-36" : ''}>
-                        <Button type="submit"  className={"w-full h-10 mt-4 hover:cursor-pointer"}>
+                    <div className={isRegister ? "mt-36" : ''}>
+                        <Button type="submit" className={"w-full h-10 mt-4 hover:cursor-pointer"}>
                             {button}
                         </Button>
                     </div>
